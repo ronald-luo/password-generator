@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
+
+$font1: "Montserrat", sans-serif;
+$font2: "Open Sans", sans-serif;
+
+$color1: #1c1c1c;
+$color2: #2b2b2b;
+$color3: #414141;
+$color4: #babac2;
+$color5: #1f6feb;
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color1;
+  color: $color4;
+  font-family: $font1;
+}
+.copied {
+  visibility: hidden;
+  position: absolute;
+}
+
+.alert {
+  padding: 1.5em;
+  animation-name: alert;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100vw;
+  background-color: $color5;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+
+  @keyframes alert {
+    100% {
+      opacity: 0%;
+    }
+    50% {
+      opacity: 100%;
+    }
+  }
+}
+
+main {
+  background-color: $color2;
+  width: 90vw;
+  margin: 5em auto 0 auto;
+  padding: 2em 2em 5em 2em;
+
+  @include desktop {
+    width: 35vw;
+    margin: 5em auto 0 auto;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+.tooltip {
+  background-color: $color1;
+  height: 50px;
+  max-width: 350px;
+  display: grid;
+  grid-template-columns: auto 50px;
+  position: relative;
+  margin: 0 auto 2em auto;
+  font-family: $font2;
+
+  &:hover {
+    animation-name: clipboard;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+
+    @keyframes clipboard {
+      100% {
+        background-color: lighten($color1, 10%);
+      }
+    }
+  }
+
+  input {
+    background-color: $color1;
+    border: none;
+    outline: none;
+    color: $color4;
+    text-indent: 1em;
+    font-size: 16px;
+  }
+
+  img {
+    display: block;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+  }
+}
+
+form {
+  padding: 0 2em 0 2em;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    padding: 0 3em 0 3em;
+  }
+
+  label {
+    font-size: 18px;
+    font-family: $font2;
+    margin: 0 0 10px 0;
+  }
+
+  p {
+    text-align: center;
+    font-family: $font2;
+    margin: 10px 0 2em 0;
+  }
+
+  [type="submit"] {
+    background-color: $color5;
+    border: none;
+    color: $color4;
+    font-size: 20px;
+    padding: 0.8em;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      animation-name: submit;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+
+      @keyframes submit {
+        100% {
+          background-color: darken($color5, 10%);
+        }
+      }
+    }
+  }
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+
+  img {
+    margin: 0 10px 0 10px;
+    border-radius: 50%;
+  }
+}

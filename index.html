@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/tooltip.css">
+</head>
+<body>
+    <div class="copied"></div>
+    <main>
+        <h1>
+            Password Generator
+        </h1>
+        <div class="tooltip">
+            <input type="text" class="password-block" id="pass">
+            
+            <img src="https://s2.svgbox.net/hero-outline.svg?ic=clipboard&color=babac2" width="32" height="32" id="copy-pass">
+                <span class="tooltiptext" id="myTooltip"></span>
+            </img>
+        </div>
+
+        <form>
+            <label for="">Password Length</label>
+            <input type="range" name="passwLen" id="passwLen" min="8" max="16">
+            <p><span id="lenValue"></span></p>
+
+            <label for="">Password Strength</label>
+            <input type="range" name="passwStr" id="passwStr" min="1" max="4">
+            <p><span id="strValue"></span></p>
+
+            <input type="submit" value="Generate" id="passwGen">
+        </form>
+    </main>
+
+    <ul>
+        <li>
+            <a href="https://www.ronald-luo.com/100-websites/"><img src="https://s2.svgbox.net/social.svg?ic=ghost&color=babac2" width="32" height="32"></a>
+        </li>
+    
+        <li>
+            <a href="https://github.com/ronald-luo/password-generator"><img src="https://s2.svgbox.net/social.svg?ic=github&color=babac2" width="32" height="32"></a>
+        </li>
+    </ul>
+
+</body>
+    <script src="index.js"></script>
+    <script></script>
+</html>
